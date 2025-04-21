@@ -69,7 +69,7 @@ public class Coffee {
 	public String getCoffeeType() {
 		return rules.stream().filter(rule -> rule.matches(milk, coffee)) // 找出符合條件的規則
 				.findFirst() // 取得第一筆匹配的
-				// .map(CoffeeRule::getResult)
+				// .map(CoffeeRule::getResult) 下面那行也可以這樣寫
 				.map(rule -> rule.getResult()) // 轉換成字串
 				.orElse("無法辨識的咖啡類型");
 	}
