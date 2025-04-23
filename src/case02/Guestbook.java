@@ -1,0 +1,28 @@
+package case02;
+
+import java.util.Date;
+
+public class Guestbook {
+
+	private String message;
+	private Date date;
+
+	public Guestbook(String message) {
+		this.message = message;
+		this.date = new Date(); // Date是java內建的
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	@Override
+	public String toString() {
+		return "Guestbook [message=" + message + ", date=" + date + "]";
+	}
+
+}
