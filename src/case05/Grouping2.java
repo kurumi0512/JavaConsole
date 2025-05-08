@@ -9,11 +9,13 @@ import java.util.Map;
 public class Grouping2 {
 
 	public static void main(String[] args) {
+		// 這裡建立了一個學生清單 students，每個學生是用 Map<String, String> 表示的，也就是一個「性別＋成績」的資料
 		List<Map<String, String>> students = List.of(Map.of("gender", "男", "grade", "A"),
 				Map.of("gender", "男", "grade", "B"), Map.of("gender", "女", "grade", "C"),
 				Map.of("gender", "女", "grade", "B"), Map.of("gender", "男", "grade", "A"));
 		System.out.println(students);
 		// 利用 gender 來分組每組有幾人
+		// Collectors.counting(),計算元素的總數，並回傳一個 Long 型別的結果。
 		Map<String, Long> gender = students.stream().collect(groupingBy(student -> student.get("gender"), counting()));
 
 		// 利用 grade 來分組每組有幾人
